@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Build",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/services/shopify",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "build:watch"],
+      "console": "integratedTerminal",
+      "runtimeVersion": "22.15.0"
+    },
+    {
+      "name": "Run",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/services/shopify",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "runtimeVersion": "22.15.0"
+    }
+  ]
+}

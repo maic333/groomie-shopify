@@ -1,0 +1,46 @@
+<div class="h-full flex-1 card border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-card to-{{ block.settings.color }}/5 text-center">
+  <div class="w-16 h-16 bg-{{ block.settings.color }}/10 rounded-full flex items-center justify-center mx-auto mb-4">
+    <span class="app-icon app-icon-{{ block.settings.icon }} text-{{ block.settings.color }} !text-[28px]"></span>
+  </div>
+  <h3 class="text-lg font-semibold text-foreground">{{ block.settings.title }}</h3>
+
+  {% if block.settings.description %}
+    <p class="text-sm text-muted-foreground mt-2">{{ block.settings.description }}</p>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Card icon",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "color",
+      "label": "Culoare",
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titlu",
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Descriere",
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card icon",
+      "category": "Custom Layout",
+    },
+  ]
+}
+{% endschema %}

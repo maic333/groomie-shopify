@@ -1,0 +1,19 @@
+{%- doc -%}
+  @param {object} product - The product object to be added to the cart.
+  @param {string} [class] - Additional CSS classes to apply to the button.
+  @param {string} [id] - The ID attribute for the button.
+{%- enddoc -%}
+
+{%- liquid
+  assign product_variant = product.selected_or_first_available_variant
+  assign price = product_variant.price | money
+  assign compare_at_price = product_variant.compare_at_price | money
+-%}
+
+<div class="{{ class }}" id="{{ id }}">
+  <div class="flex items-center gap-3">
+    <span class="text-3xl font-bold text-groomie-olive-dark">{{ price }}</span>
+    <span class="text-lg text-muted-foreground line-through">{{ compare_at_price }}</span>
+  </div>
+  <span class="text-muted-foreground">Transport gratuit la comandă peste 100 lei</span>
+</div>

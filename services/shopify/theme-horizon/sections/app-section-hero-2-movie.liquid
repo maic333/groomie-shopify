@@ -1,0 +1,45 @@
+<div class="relative pt-16 sm:pt-20 pb-12 sm:pb-20 bg-groomie-cream-soft overflow-hidden">
+  <div class="max-w-content mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="text-center space-y-8 sm:space-y-12">
+      
+      <!-- Title -->
+      <div class="text-center">
+        <h2 class="text-2xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">
+          Blănița multă? Nicio problemă
+        </h2>
+        <p class="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+          Mănușa Groomie adună blănița în câteva secunde, ori de câte ori ai nevoie.
+        </p>
+      </div>
+      
+      <!-- Product Video -->
+      <div class="flex justify-center py-4 sm:py-8">
+        <div class="min-w-[300px] max-w-2xl relative shadow-md rounded-md overflow-hidden">
+          {% content_for 'blocks' %}
+          <div class="absolute inset-0 bg-black/15"></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section hero 2",
+  "tag": "section",
+  "class": "section-hero-2-movie-wrapper",
+  "blocks": [
+    {
+      "type": "video"
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section hero 2",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

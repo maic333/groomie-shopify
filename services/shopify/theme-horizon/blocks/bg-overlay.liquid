@@ -1,0 +1,32 @@
+<div class="absolute inset-0" style="background-color: {{ block.settings.color }}; opacity: {{ block.settings.color_opacity }};"></div>
+
+{% schema %}
+{
+  "name": "Background overlay",
+  "tag": null,
+  "settings": [
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color",
+      "default": "#000000",
+      "info": "Hex color code"
+    },
+    {
+      "type": "range",
+      "id": "color_opacity",
+      "label": "Color opacity",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "step": 0.1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Background overlay",
+      "category": "Custom Layout",
+    },
+  ]
+}
+{% endschema %}

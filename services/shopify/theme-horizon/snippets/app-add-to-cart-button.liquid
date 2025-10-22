@@ -1,0 +1,125 @@
+{%- doc -%}
+  @param {string} add_to_cart_text - The text to display on the button.
+  @param {string} coupon - The coupon to apply to the product.
+  @param {object} product - The product object to be added to the cart.
+  @param {number} [quantity] - The quantity of the product to be added to the cart.
+  @param {string} [class] - Additional CSS classes to apply to the button.
+  @param {string} [id] - The ID attribute for the button.
+  @param {boolean} [hide_icon] - Whether to hide the icon.
+{%- enddoc -%}
+
+{%- liquid
+  assign product_variant = product.selected_or_first_available_variant
+  assign quantity = quantity | default: 1
+  assign default_add_to_cart_text = 'Adaugă în coș'
+  assign product_variant_media = product_variant.featured_media.preview_image | image_url: width: 100
+  if product_variant.featured_media.preview_image == blank
+    assign product_variant_media = product.featured_media.preview_image | image_url: width: 100
+  endif
+  if coupon == blank
+    assign button_height = "h-12"
+  else
+    assign button_height = "h-16"
+  endif
+-%}
+
+<add-to-cart-component
+  ref="addToCartButtonContainer"
+  data-product-variant-media="{{ product_variant_media }}"
+>
+  <button
+    id="{{ id }}"
+    type="button"
+    name="add"
+    ref="addToCartButton"
+    on:click="/quickAddToCart/{{ product_variant.id }}"
+    class="button relative {{ button_height }} {{ class }}"
+  >
+    <span
+      class="add-to-cart-text flex flex-col gap-1 justify-center items-center"
+    >
+      <span class="flex justify-center items-center gap-2">
+        {% if hide_icon != true %}
+          <span class="svg-wrapper add-to-cart-icon">
+            {{- 'icon-add-to-cart.svg' | inline_asset_content -}}
+          </span>
+        {% endif %}
+        <span class="add-to-cart-text__content">
+          {{- add_to_cart_text | default: default_add_to_cart_text -}}
+        </span>
+      </span>
+
+      {% if coupon %}
+        <span class="text-xs text-white/80">
+          Folosind cuponul <span class="font-bold">{{- coupon -}}</span>
+        </span>
+      {% endif %}
+    </span>
+    <span
+      aria-hidden="true"
+      class="add-to-cart-text--added"
+    >
+      <span class="svg-wrapper add-to-cart-icon--added">
+        {{- 'icon-checkmark.svg' | inline_asset_content -}}
+      </span>
+      <span>
+        {{- 'Adăugat' -}}
+      </span>
+    </span>
+  </button>
+</add-to-cart-component>
+
+{% stylesheet %}
+  .add-to-cart-text {
+    animation-duration: var(--animation-speed);
+    animation-timing-function: var(--animation-easing);
+    animation-fill-mode: forwards;
+    transition: opacity var(--animation-speed) var(--animation-easing);
+  }
+
+  .atc-added .add-to-cart-text {
+    animation-name: atc-slide-out;
+  }
+
+  .add-to-cart-text--added {
+    position: absolute;
+    inset: 0;
+    animation-duration: var(--animation-speed);
+    animation-timing-function: var(--animation-easing);
+    animation-fill-mode: forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: width var(--animation-speed) var(--animation-easing),
+      opacity var(--animation-speed) var(--animation-easing);
+  }
+
+  .atc-added .add-to-cart-text--added {
+    animation-name: atc-slide-in;
+  }
+
+  @keyframes atc-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.5em);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes atc-slide-out {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    to {
+      transform: translateY(-1em);
+      opacity: 0;
+    }
+  }
+{% endstylesheet %}

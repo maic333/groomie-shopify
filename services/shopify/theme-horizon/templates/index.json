@@ -1,0 +1,197 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_1": {
+      "type": "app-section-hero",
+      "blocks": {
+        "video_xWPQHV": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/groomie-car-cut-small.mp4",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 100,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "auto",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "video_xWPQHV"
+      ],
+      "name": "Hero",
+      "settings": {}
+    },
+    "section_features_1": {
+      "type": "app-section-features",
+      "blocks": {
+        "card-icon_1": {
+          "type": "app-card-icon",
+          "settings": {
+            "icon": "bolt",
+            "color": "groomie-sage",
+            "title": "Eficientă",
+            "description": "Atrage 99% din păr, praf și alergeni dintr-o singură trecere."
+          },
+          "blocks": {}
+        },
+        "card-icon_2": {
+          "type": "app-card-icon",
+          "settings": {
+            "icon": "eco",
+            "color": "groomie-terracotta",
+            "title": "Eco-friendly",
+            "description": "100% reutilizabilă, fără rezerve."
+          },
+          "blocks": {}
+        },
+        "card-icon_3": {
+          "type": "app-card-icon",
+          "settings": {
+            "icon": "widgets",
+            "color": "groomie-sage-dark",
+            "title": "Versatilă",
+            "description": "Perfectă pentru canapea, pat, covor, sau interiorul mașinii."
+          },
+          "blocks": {}
+        },
+        "card-icon_4": {
+          "type": "app-card-icon",
+          "settings": {
+            "icon": "time",
+            "color": "groomie-forest",
+            "title": "Rapidă",
+            "description": "Face curat în câteva secunde."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "card-icon_1",
+        "card-icon_2",
+        "card-icon_3",
+        "card-icon_4"
+      ],
+      "name": "Features",
+      "settings": {}
+    },
+    "section_hero_2": {
+      "type": "app-section-hero-2-movie",
+      "blocks": {
+        "video_xWPQHV2": {
+          "type": "video",
+          "name": "t:names.video",
+          "settings": {
+            "source": "uploaded",
+            "video": "shopify://files/videos/groomie-sofa-720p.mp4",
+            "video_url": "",
+            "video_autoplay": true,
+            "video_loop": true,
+            "alt": "",
+            "custom_width": 100,
+            "custom_width_mobile": 100,
+            "aspect_ratio": "auto",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "video_xWPQHV2"
+      ],
+      "name": "Hero",
+      "settings": {}
+    },
+    "section_hero_3": {
+      "type": "app-section-hero-3-before-after",
+      "blocks": {
+        "image_q8mHUM": {
+          "type": "image",
+          "name": "t:names.image",
+          "settings": {
+            "image": "shopify://shop_images/before-after-Groomie.webp",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "custom",
+            "custom_width": 100,
+            "width_mobile": "custom",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "image_q8mHUM"
+      ],
+      "name": "Hero",
+      "settings": {}
+    },
+    "section_trust_1": {
+      "type": "app-section-trust",
+      "name": "Trust",
+      "settings": {}
+    },
+    "section_testimonials_1": {
+      "type": "app-section-testimonials",
+      "name": "Testimonials",
+      "settings": {}
+    },
+    "section_faq_1": {
+      "type": "app-section-faq",
+      "name": "FAQ",
+      "settings": {}
+    },
+    "section_sticky_cta_1": {
+      "type": "app-section-sticky-cta",
+      "name": "Sticky cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "section_hero_1",
+    "section_features_1",
+    "section_hero_2",
+    "section_hero_3",
+    "section_trust_1",
+    "section_testimonials_1",
+    "section_faq_1",
+    "section_sticky_cta_1"
+  ]
+}

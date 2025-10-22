@@ -1,0 +1,43 @@
+<div class="py-12 bg-gradient-to-r from-primary to-accent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-white/20">
+        <h3 class="text-2xl font-bold text-white mb-3">
+          🎉 Creează cont și economisește 10%
+        </h3>
+        <p class="text-white/90 text-lg mb-4">
+          Primești <strong>reducere de 10%</strong> la prima comandă de peste 100 RON
+        </p>
+        <button class="ui-button button-size-lg bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3" onclick="showCreateAccount()">
+          Creează cont gratuit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showCreateAccount() {
+    const headerAccountButton = document.querySelector('.account-button.header-actions__action');
+    if (headerAccountButton) {
+      headerAccountButton.click();
+    }
+  }
+</script>
+
+
+{% schema %}
+{
+  "name": "Section account discount",
+  "tag": "section",
+  "class": "section-account-discount-wrapper",
+  "blocks": [],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section account discount",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

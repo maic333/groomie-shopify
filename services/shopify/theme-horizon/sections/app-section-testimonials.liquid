@@ -1,0 +1,85 @@
+<div class="py-16 bg-secondary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-foreground mb-4">
+        Ce spun clienții
+      </h2>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card flex flex-col border-0 shadow-lg">
+        <div class="flex items-center mb-4">
+          {% for star in (1..5) %}
+            <span class="app-icon app-icon-star-filled !text-[16px] text-orange-500"></span>
+          {% endfor %}
+        </div>
+        <p class="flex-1 text-muted-foreground mb-4 font-medium">
+          "Mănușa e genială, atrage tot părul de pe canapea de la prima trecere. Până acum foloseam role cu lipici și consumam cam 5-6 rezerve pe săptămână. Mă bucur că nu mai am grija asta."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+            <span class="text-sm font-semibold text-groomie-orange">AT</span>
+          </div>
+          <div>
+            <p class="font-semibold text-sm text-foreground">Ana T.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flex flex-col border-0 shadow-lg">
+        <div class="flex items-center mb-4">
+          {% for star in (1..5) %}
+            <span class="app-icon app-icon-star-filled !text-[16px] text-orange-500"></span>
+          {% endfor %}
+        </div>
+        <p class="flex-1 text-muted-foreground mb-4 font-medium">
+          "Funcționează mai bine decât mă așteptam. Avem un labrador care lasă păr peste tot. Mănușa ridică tot, noi o folosim și pe covor."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+            <span class="text-sm font-semibold text-groomie-orange">LC</span>
+          </div>
+          <div>
+            <p class="font-semibold text-sm text-foreground">Laura C.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flex flex-col border-0 shadow-lg">
+        <div class="flex items-center mb-4">
+          {% for star in (1..5) %}
+            <span class="app-icon app-icon-star-filled !text-[16px] text-orange-500"></span>
+          {% endfor %}
+        </div>
+        <p class="flex-1 text-muted-foreground mb-4 font-medium">
+          "Mănușa asta e exact ce aveam nevoie. Curăț hainele și bancheta din mașină în câteva secunde. Părul se strânge ghem și-l arunc, sunt foarte mulțumit!"
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+            <span class="text-sm font-semibold text-groomie-orange">RT</span>
+          </div>
+          <div>
+            <p class="font-semibold text-sm text-foreground">Robert T.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Section testimonials",
+  "tag": "section",
+  "class": "section-testimonials-wrapper",
+  "blocks": [],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section testimonials",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

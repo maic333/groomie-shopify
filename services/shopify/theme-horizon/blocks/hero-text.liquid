@@ -1,0 +1,36 @@
+<div class="relative text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+  <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+    {{ block.settings.heading }}
+  </h1>
+  <p class="text-xl md:text-2xl mb-8 text-white/90">
+    {{ block.settings.subheading }}
+  </p>
+</div>
+
+
+{% schema %}
+{
+  "name": "Hero text",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titlu",
+      "default": "Fără păr pe canapea, doar mângâieri."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subtitlu",
+      "default": "Descoperă Mănușa Groomie – singurul pas spre un animăluț fericit și o casă curată."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero text",
+      "category": "Custom Layout",
+    },
+  ]
+}
+{% endschema %}

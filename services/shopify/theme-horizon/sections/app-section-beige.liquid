@@ -1,0 +1,56 @@
+<div class="w-full py-16 bg-{{ section.settings.background_color }}">
+  <div class="w-full max-w-content mx-auto flex flex-col px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-foreground mb-6">
+        {{ section.settings.title }}
+      </h2>
+    </div>
+    
+    <div class="w-full grid grid-cols-2 md:flex md:flex-row gap-6">
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Section beige",
+  "tag": "section",
+  "class": "section-beige-wrapper",
+  "blocks": [
+    {
+      "type": "app-card-icon"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Culoare de fundal",
+      "options": [
+        {
+          "value": "background",
+          "label": "background"
+        },
+        {
+          "value": "secondary",
+          "label": "becondary"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titlu",
+      "default": "Pe ce suprafețe funcționează?"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Section beige",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

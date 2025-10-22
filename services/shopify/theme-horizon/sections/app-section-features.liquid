@@ -1,0 +1,38 @@
+<section class="py-12 sm:py-20 bg-background">
+  <div class="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="text-center mb-8 sm:mb-16">
+      <h2 class="text-2xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">
+        Mănușa Groomie schimbă jocul.
+      </h2>
+      <p class="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+        Fără consumabile. Fără efort. Fără păr rămas în urmă.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-6 mb-8 sm:mb-12">
+      {% content_for 'blocks' %}
+    </div>
+    
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Section features",
+  "tag": "section",
+  "class": "section-features-wrapper",
+  "blocks": [
+    {
+      "type": "app-card-icon"
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section features",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

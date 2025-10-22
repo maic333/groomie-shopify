@@ -1,0 +1,44 @@
+<div class="relative pt-16 sm:pt-20 bg-white overflow-hidden">
+  <div class="max-w-content mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="text-center space-y-8 sm:space-y-12">
+      <!-- Title -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight">
+        <span class="block mb-2">O canapea curată.</span>
+        <span class="block text-groomie-sage">Un animăluț fericit.</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
+        Oferă-i mângâierile pe care le merită — fără să mai ai grija părului lăsat în urmă.
+      </p>
+      
+      <!-- Product Image -->
+      <div class="flex justify-center py-4 sm:py-8">
+        <div class="w-full min-w-[300px] max-w-[600px] relative">
+          {% content_for 'blocks' %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section hero 3",
+  "tag": "section",
+  "class": "section-hero-3-before-after-wrapper",
+  "blocks": [
+    {
+      "type": "image"
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section hero 3",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

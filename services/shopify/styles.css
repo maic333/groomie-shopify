@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 40% 96%;
+    --foreground: 92 25% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 92 25% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 92 25% 25%;
+
+    --primary: 92 14% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 30% 88%;
+    --secondary-foreground: 92 25% 25%;
+
+    --muted: 42 20% 92%;
+    --muted-foreground: 92 12% 45%;
+
+    --accent: 28 40% 75%;
+    --accent-foreground: 92 25% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 42 20% 88%;
+    --input: 42 20% 88%;
+    --ring: 92 14% 67%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 42 40% 96%;
+    --sidebar-foreground: 92 25% 25%;
+    --sidebar-primary: 92 14% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 42 30% 88%;
+    --sidebar-accent-foreground: 92 25% 25%;
+    --sidebar-border: 42 20% 88%;
+    --sidebar-ring: 92 14% 67%;
+
+    /* Groomie Brand Colors */
+    /* --sage-primary: 92 14% 67%;
+    --sage-dark: 92 20% 55%;
+    --sage-light: 92 25% 80%; */
+    --sage-primary: 92 20% 55%;
+    --sage-dark: 92 22% 45%;
+    --sage-light: 92 14% 67%;
+    --cream-warm: 42 40% 96%;
+    --cream-soft: 42 30% 88%;
+    --terracotta: 28 40% 75%;
+    --forest-deep: 92 25% 35%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--sage-primary)), hsl(var(--sage-dark)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--sage-primary)) 0%, hsl(var(--terracotta)) 50%, hsl(var(--sage-light)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--cream-warm)), hsl(var(--cream-soft)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--terracotta)), hsl(var(--sage-light)));
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer components {
+  /**
+    * Cards
+    */
+  .card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm p-6;
+  }
+
+  .card-icon {
+    @apply mr-2 !text-[20px];
+  }
+
+  .card-title {
+    @apply text-xl font-semibold leading-none tracking-tight;
+  }
+
+  .card-description {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /**
+   * Buttons
+   */
+  .ui-button {
+    @apply inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer ring-offset-background transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
+    @apply border bg-primary border-primary text-primary-foreground hover:bg-primary/90 hover:border-primary/90;
+    @apply h-10 px-4 py-2;
+  }
+
+  .ui-button.color-primary {
+    @apply bg-blue-600 border-blue-600 hover:bg-blue-700 hover:border-blue-700;
+  }
+
+  .ui-button.color-accent {
+    @apply bg-green-600 border-green-600 hover:bg-green-700 hover:border-green-700;
+  }
+
+  .ui-button.color-inverse {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .ui-button.color-red {
+    @apply bg-red-600 border-red-600 hover:bg-red-700 hover:border-red-700;
+  }
+
+  .ui-button.color-yellow {
+    @apply bg-yellow-600 border-yellow-600 hover:bg-yellow-700 hover:border-yellow-700;
+  }
+
+  .ui-button.color-blue {
+    @apply bg-blue-600 border-blue-600 hover:bg-blue-700 hover:border-blue-700;
+  }
+
+  .ui-button-outline {
+    @apply ui-button;
+    @apply border-input hover:border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .ui-button-outline.color-primary {
+    @apply bg-blue-600/5 border-blue-600/30 hover:bg-blue-600/10 hover:border-blue-600/20;
+  }
+
+  .ui-button-outline.color-red {
+    @apply bg-red-600/5 border-red-600/30 hover:bg-red-600/10 hover:border-red-600/20 text-red-600 hover:text-red-700;
+  }
+
+  .ui-button-outline.color-yellow {
+    @apply bg-yellow-600/5 border-yellow-600/30 hover:bg-yellow-600/10 hover:border-yellow-600/20;
+  }
+
+  .ui-button-outline.color-blue {
+    @apply bg-blue-600/5 border-blue-600/30 hover:bg-blue-600/10 hover:border-blue-600/20;
+  }
+
+  .ui-button-icon {
+    @apply ui-button;
+    @apply border-input hover:border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground;
+    @apply w-[40px] h-[40px];
+  }
+
+  .ui-button-ghost {
+    @apply ui-button;
+    @apply text-accent-foreground bg-transparent border-transparent hover:bg-accent hover:border-accent hover:text-accent-foreground;
+  }
+
+  .ui-button-icon-ghost {
+    @apply ui-button-ghost;
+    @apply w-[40px] h-[36px];
+  }
+
+  .ui-button-link {
+    @apply ui-button;
+    @apply bg-transparent border-transparent text-blue-600 underline-offset-4 px-0;
+    @apply hover:bg-transparent hover:border-transparent hover:text-blue-700;
+  }
+
+  .ui-button-submit {
+    @apply ui-button mt-4 md:self-start;
+    @apply bg-green-600 border-green-600 hover:bg-green-700 hover:border-green-700;
+  }
+
+  .button-size-sm {
+    @apply h-9 px-3;
+  }
+
+  .button-size-lg {
+    @apply h-12 px-6 py-3 text-lg;
+  }
+
+  .button-size-xl {
+    @apply h-16 px-8 py-4 text-xl;
+  }
+
+  .button-color-warn {
+    @apply text-red-600 hover:text-red-700 hover:bg-red-50 hover:border-red-50;
+  }
+}
+
+/**
+ * General styles
+ */
+.app-icon {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  font-size: 16px;
+}
+
+.grid {
+  grid-template-areas: unset !important;
+}

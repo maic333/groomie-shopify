@@ -1,0 +1,70 @@
+<div class="relative pt-8 sm:pt-12 pb-8 sm:pb-12 bg-white overflow-hidden">
+  <div class="max-w-content mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="text-center space-y-6 sm:space-y-12">
+      <!-- Title -->
+      <h1 class="text-3xl xs:text-2xl sm:text-3xl lg:text-5xl font-bold text-slate-900 leading-tight">
+        <span class="block mb-2">Fără păr pe canapea.</span>
+        <span class="block text-groomie-sage">Sau în mașină.</span>
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="hidden xs:block text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
+        Elimini părul de animale în câteva secunde — rapid, plăcut și eficient.
+      </p>
+      
+      <!-- Product Video -->
+      <div class="flex justify-center py-2">
+        <div class="min-w-[250px] max-w-2xl relative shadow-md rounded-md overflow-hidden">
+          {% content_for 'blocks' %}
+          <div class="absolute inset-0 bg-black/15"></div>
+        </div>
+      </div>
+      
+      <!-- CTA -->
+      <div class="flex flex-col items-center gap-4">
+        <div class="text-lg text-slate-600">
+          <span class="line-through text-slate-400">59 lei</span>
+          <span class="ml-2 text-2xl font-bold text-groomie-terracotta">39 lei</span>
+          <span class="ml-2 text-sm bg-groomie-terracotta text-white px-2 py-1 rounded">-33%</span>
+        </div>
+
+        {% assign first_product = collections['frontpage'].products.first %}
+        {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Comandă acum - 39 lei', hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+
+        <div>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base text-slate-500">
+            <div class="flex items-center gap-2">
+              <span class="app-icon app-icon-delivery !text-[16px]"></span>
+              <span>Livrare rapidă în 24-48h</span>
+            </div>
+            <span class="hidden sm:inline">•</span>
+            <div class="flex items-center gap-2">
+              <span class="app-icon app-icon-shield !text-[16px]"></span>
+              <span>Retur în 30 zile fără întrebări</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section hero",
+  "tag": "section",
+  "class": "section-hero-wrapper",
+  "blocks": [
+    {
+      "type": "video"
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section hero",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}
