@@ -1,0 +1,107 @@
+<div id="section-leash-led-padlock" class="relative pt-12 sm:pt-20 pb-12 sm:pb-20 bg-background">
+  <div class="w-full max-w-content mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="text-center space-y-6 sm:space-y-12">
+      <!-- Title -->
+      <h2 class="text-3xl xs:text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight">
+        <span class="block mb-2">Lesa Groomie Fashion.</span>
+        <span class="block text-groomie-sage">În două nuanțe.</span>
+      </h2>
+      
+      <!-- Features -->
+      {% comment %} <div class="flex justify-center flex-wrap gap-4">
+        
+      </div> {% endcomment %}
+
+      <!-- Products -->
+      <div class="w-full grid grid-cols-2 gap-4 sm:gap-8 py-2">
+        {% for collection in collections %}
+          {% for product in collection.products %}
+            {% if product.id == 9900340085065 %}
+              {% for variant in product.variants %}
+                <div class="relative bg-white rounded-3xl rounded-b-[6px] md:rounded-b-3xl px-1 py-4 xs:px-3 xs:py-4 sm:p-8 shadow-2xl flex flex-col items-center">
+                  <a
+                    href="{{ variant.url }}"
+                    class="aspect-square bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl overflow-hidden mb-6 shadow-inner max-h-[30vh]"
+                  >
+                    <img 
+                      src="{{ variant.featured_media.preview_image | image_url }}"
+                      alt="Lesa Groomie Fashion - {{ variant.title }}"
+                      class="w-full h-full object-cover"
+                    />
+                  </a>
+                  
+                  <div class="text-center space-y-4">
+                    <div class="space-y-2">
+                      <div class="inline-flex items-center gap-2 bg-groomie-terracotta/10 text-groomie-terracotta rounded-full px-4 py-2">
+                        <span class="text-sm font-bold">REDUCERE</span>
+                      </div>
+                      <div class="text-lg">
+                        <span class="line-through text-muted-foreground">199 lei</span>
+                        <span class="ml-2 text-3xl font-bold text-groomie-terracotta">149 lei</span>
+                        <span class="ml-2 text-sm bg-groomie-terracotta text-white px-2 py-1 rounded">-25%</span>
+                      </div>
+                    </div>
+
+                    <div class="flex justify-center pt-4">
+                      {% render 'app-add-variant-to-cart-button', product: product, variant: variant, add_to_cart_text: 'Adaugă în coș', hide_icon: true, class: 'w-full sm:w-auto text-md md:text-xl px-2 2xs:px-4 xs:px-8 md:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+
+      <!-- Features -->
+      <div class="flex flex-col items-center gap-2 sm:gap-3 text-xs sm:text-sm max-w-3xl mx-auto">
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm max-w-3xl mx-auto">
+          <div class="flex items-center gap-2 bg-gradient-to-br from-groomie-sage/10 to-groomie-sage/20 text-groomie-sage-dark px-3 py-1.5 rounded-full shadow-sm border border-groomie-sage/20">
+            <span class="app-icon app-icon-zap !text-[16px]"></span>
+            <span class="font-medium">Lanternă LED</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gradient-to-br from-groomie-sage/10 to-groomie-sage/20 text-groomie-sage-dark px-3 py-1.5 rounded-full shadow-sm border border-groomie-sage/20">
+            <span class="font-bold">3M</span>
+            <span class="font-medium">lungime</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gradient-to-br from-groomie-sage-light/20 to-groomie-sage-light/30 text-groomie-sage-dark px-3 py-1.5 rounded-full shadow-sm border border-groomie-sage-light/30">
+            <span class="font-medium">Suport pentru punguțe</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 bg-gradient-to-br from-groomie-forest/10 to-groomie-forest/20 text-groomie-forest px-3 py-1.5 rounded-full shadow-sm border border-groomie-forest/20">
+          <span class="font-medium">Pentru câini de orice dimensiune</span>
+        </div>
+      </div>
+
+      <!-- Shipping info -->
+      <div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base text-slate-500">
+          <div class="flex items-center gap-2">
+            <span class="app-icon app-icon-delivery !text-[16px]"></span>
+            <span>Livrare rapidă în 24-48h</span>
+          </div>
+          <span class="hidden sm:inline">•</span>
+          <div class="flex items-center gap-2">
+            <span class="app-icon app-icon-shield !text-[16px]"></span>
+            <span>Retur în 30 zile fără întrebări</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section leash led padlock",
+  "tag": "section",
+  "class": "section-leash-led-padlock-wrapper",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section leash led padlock",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

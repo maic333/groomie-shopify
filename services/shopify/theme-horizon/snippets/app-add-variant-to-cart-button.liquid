@@ -2,6 +2,7 @@
   @param {string} add_to_cart_text - The text to display on the button.
   @param {string} coupon - The coupon to apply to the product.
   @param {object} product - The product object to be added to the cart.
+  @param {object} variant - The product variant object to be added to the cart.
   @param {number} [quantity] - The quantity of the product to be added to the cart.
   @param {string} [class] - Additional CSS classes to apply to the button.
   @param {string} [id] - The ID attribute for the button.
@@ -9,13 +10,10 @@
 {%- enddoc -%}
 
 {%- liquid
-  assign product_variant = product.selected_or_first_available_variant
+  assign product = product
+  assign product_variant = variant
   assign quantity = quantity | default: 1
   assign default_add_to_cart_text = 'Adaugă în coș'
-  assign product_variant_media = product_variant.featured_media.preview_image | image_url: width: 100
-  if product_variant.featured_media.preview_image == blank
-    assign product_variant_media = product.featured_media.preview_image | image_url: width: 100
-  endif
   if coupon == blank
     assign button_height = "h-12"
   else
@@ -25,14 +23,13 @@
 
 <add-to-cart-component
   ref="addToCartButtonContainer"
-  data-product-variant-media="{{ product_variant_media }}"
 >
   <button
     id="{{ id }}"
     type="button"
     name="add"
     ref="addToCartButton"
-    on:click="/quickAddToCart/9767750205769-52764691267913"
+    on:click="/quickAddToCart/{{ product.id }}-{{ product_variant.id }}"
     class="button relative {{ button_height }} {{ class }}"
   >
     <span

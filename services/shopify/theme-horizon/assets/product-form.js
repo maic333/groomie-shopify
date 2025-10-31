@@ -62,16 +62,22 @@ export class AddToCartComponent extends Component {
 
   /**
    * Handles the quick add to cart event from any page.
-   * @param {string} productId - The product ID.
+   * @param {string} productIdDashVariantId - The product ID and variant ID separated by a dash.
    * @param {MouseEvent & {target: HTMLElement}} event - The click event.
    */
-  quickAddToCart(productId, event) {
+  quickAddToCart(productIdDashVariantId, event) {
     this.handleClick(event);
+
+    const [productId, variantId] = productIdDashVariantId.split('-');
+
+    if (!productId || !variantId) throw new Error('Product ID and variant ID are required');
 
     const formData = new FormData();
     formData.append('form_type', 'product');
-    formData.append('product-id', '9767750205769');    // product id
-    formData.append('id', '52764691267913');    // variant id
+    // formData.append('product-id', '9767750205769');    // product id
+    // formData.append('id', '52764691267913');    // variant id
+    formData.append('product-id', productId);    // product id
+    formData.append('id', variantId);    // variant id
     formData.append('quantity', '1');
     // formData.append('sections', 'cart-items-component');
 

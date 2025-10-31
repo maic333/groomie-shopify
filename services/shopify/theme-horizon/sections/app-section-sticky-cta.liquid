@@ -16,7 +16,7 @@
       </div>
       <div class="flex flex-col gap-1">
         {% assign first_product = collections['frontpage'].products.first %}
-        {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Comandă acum - 39 lei', hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+        {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Comandă Mănușa Groomie', hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
       </div>
     </div>
   </div>
@@ -42,9 +42,15 @@
     const scrollPosition = window.scrollY;
     {% comment %} const heroSection = document.querySelector('section');
     const heroHeight = heroSection?.offsetHeight || 800; {% endcomment %}
-    const heroHeight = 800;
-    
-    if (scrollPosition > heroHeight / 2) {
+    {% comment %} const heroHeight = 800; {% endcomment %}
+
+    const heroSection = document.getElementById('section-hero-glove');
+    const heroSectionHeight = heroSection?.offsetHeight;
+    const leashLedPadlockSection = document.getElementById('section-leash-led-padlock');
+    const leashLedPadlockSectionHeight = leashLedPadlockSection?.offsetHeight;
+    const totalHeight = heroSectionHeight + leashLedPadlockSectionHeight;
+
+    if (scrollPosition > totalHeight - 200) {
       showStickyCTA(stickyCta, footerPadding);
     } else {
       hideStickyCTA(stickyCta, footerPadding);

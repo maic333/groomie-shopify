@@ -43,59 +43,64 @@
       "name": "Hero",
       "settings": {}
     },
-    "section_features_1": {
-      "type": "app-section-features",
-      "blocks": {
-        "card-icon_1": {
-          "type": "app-card-icon",
-          "settings": {
-            "icon": "bolt",
-            "color": "groomie-sage",
-            "title": "Eficientă",
-            "description": "Atrage 99% din păr, praf și alergeni dintr-o singură trecere."
-          },
-          "blocks": {}
-        },
-        "card-icon_2": {
-          "type": "app-card-icon",
-          "settings": {
-            "icon": "eco",
-            "color": "groomie-terracotta",
-            "title": "Eco-friendly",
-            "description": "100% reutilizabilă, fără rezerve."
-          },
-          "blocks": {}
-        },
-        "card-icon_3": {
-          "type": "app-card-icon",
-          "settings": {
-            "icon": "widgets",
-            "color": "groomie-sage-dark",
-            "title": "Versatilă",
-            "description": "Perfectă pentru canapea, pat, covor, sau interiorul mașinii."
-          },
-          "blocks": {}
-        },
-        "card-icon_4": {
-          "type": "app-card-icon",
-          "settings": {
-            "icon": "time",
-            "color": "groomie-forest",
-            "title": "Rapidă",
-            "description": "Face curat în câteva secunde."
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "card-icon_1",
-        "card-icon_2",
-        "card-icon_3",
-        "card-icon_4"
-      ],
-      "name": "Features",
+    "section_leash_led_padlock_1": {
+      "type": "app-section-leash-led-padlock",
+      "name": "Leash led padlock",
       "settings": {}
     },
+    // "section_features_1": {
+    //   "type": "app-section-features",
+    //   "blocks": {
+    //     "card-icon_1": {
+    //       "type": "app-card-icon",
+    //       "settings": {
+    //         "icon": "bolt",
+    //         "color": "groomie-sage",
+    //         "title": "Eficientă",
+    //         "description": "Atrage 99% din păr, praf și alergeni dintr-o singură trecere."
+    //       },
+    //       "blocks": {}
+    //     },
+    //     "card-icon_2": {
+    //       "type": "app-card-icon",
+    //       "settings": {
+    //         "icon": "eco",
+    //         "color": "groomie-terracotta",
+    //         "title": "Eco-friendly",
+    //         "description": "100% reutilizabilă, fără rezerve."
+    //       },
+    //       "blocks": {}
+    //     },
+    //     "card-icon_3": {
+    //       "type": "app-card-icon",
+    //       "settings": {
+    //         "icon": "widgets",
+    //         "color": "groomie-sage-dark",
+    //         "title": "Versatilă",
+    //         "description": "Perfectă pentru canapea, pat, covor, sau interiorul mașinii."
+    //       },
+    //       "blocks": {}
+    //     },
+    //     "card-icon_4": {
+    //       "type": "app-card-icon",
+    //       "settings": {
+    //         "icon": "time",
+    //         "color": "groomie-forest",
+    //         "title": "Rapidă",
+    //         "description": "Face curat în câteva secunde."
+    //       },
+    //       "blocks": {}
+    //     }
+    //   },
+    //   "block_order": [
+    //     "card-icon_1",
+    //     "card-icon_2",
+    //     "card-icon_3",
+    //     "card-icon_4"
+    //   ],
+    //   "name": "Features",
+    //   "settings": {}
+    // },
     "section_hero_2": {
       "type": "app-section-hero-2-movie",
       "blocks": {
@@ -186,7 +191,8 @@
   },
   "order": [
     "section_hero_1",
-    "section_features_1",
+    "section_leash_led_padlock_1",
+    // "section_features_1",
     "section_hero_2",
     "section_hero_3",
     "section_trust_1",
