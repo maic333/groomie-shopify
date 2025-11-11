@@ -1,0 +1,180 @@
+
+<div id="section-hero-glove" class="relative pt-8 sm:pt-12 pb-8 sm:pb-12 bg-gradient-to-b from-zinc-950 via-zinc-900 to-black">
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute inset-0 bg-[linear-gradient(30deg,transparent_48%,rgba(234,179,8,0.03)_48%,rgba(234,179,8,0.03)_52%,transparent_52%)] bg-[length:50px_50px]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(234,179,8,0.1),transparent_50%)]"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute top-1/4 right-0 w-72 h-72 bg-yellow-400/8 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  </div>
+
+  <div class="max-w-content mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="text-center space-y-6 sm:space-y-12">
+      <!-- Black Week Badge with Countdown -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="inline-block animate-bounce">
+          <div class="bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 text-black px-4 py-1 sm:px-6 sm:py-2 rounded-full text-xs sm:text-base font-bold uppercase tracking-widest shadow-2xl border-2 border-yellow-300">
+            🔥 Black Week 🔥
+          </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="flex gap-1.5 sm:gap-3">
+          <div class="bg-zinc-900/80 backdrop-blur-sm border-2 border-yellow-500 rounded-lg px-2 py-1 sm:px-4 sm:py-3 min-w-[50px] sm:min-w-[70px]">
+            <div class="text-yellow-400 text-lg sm:text-2xl font-bold text-center">6</div>
+            <div class="text-yellow-200 text-[9px] sm:text-xs uppercase text-center">Zile</div>
+          </div>
+          <div class="bg-zinc-900/80 backdrop-blur-sm border-2 border-yellow-500 rounded-lg px-2 py-1 sm:px-4 sm:py-3 min-w-[50px] sm:min-w-[70px]">
+            <div class="text-yellow-400 text-lg sm:text-2xl font-bold text-center">20</div>
+            <div class="text-yellow-200 text-[9px] sm:text-xs uppercase text-center">Ore</div>
+          </div>
+          <div class="bg-zinc-900/80 backdrop-blur-sm border-2 border-yellow-500 rounded-lg px-2 py-1 sm:px-4 sm:py-3 min-w-[50px] sm:min-w-[70px]">
+            <div class="text-yellow-400 text-lg sm:text-2xl font-bold text-center">59</div>
+            <div class="text-yellow-200 text-[9px] sm:text-xs uppercase text-center">Min</div>
+          </div>
+          <div class="bg-zinc-900/80 backdrop-blur-sm border-2 border-yellow-500 rounded-lg px-2 py-1 sm:px-4 sm:py-3 min-w-[50px] sm:min-w-[70px]">
+            <div class="text-yellow-400 text-lg sm:text-2xl font-bold text-center">59</div>
+            <div class="text-yellow-200 text-[9px] sm:text-xs uppercase text-center">Sec</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-3xl xs:text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight text-white drop-shadow-2xl">
+        <span class="block mb-2">Fără păr pe canapea.</span>
+        <span class="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">Sau în mașină.</span>
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="hidden xs:block text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
+        Elimini părul de animale în câteva secunde — rapid, plăcut și eficient.
+      </p>
+      
+      <!-- Product Video -->
+      <div class="flex justify-center py-2">
+        <div class="relative p-4 sm:p-8 bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(234,179,8,0.5)]">
+          <!-- Yellow decorative corners -->
+          <div class="absolute top-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-t-[3px] border-l-[3px] border-yellow-500 rounded-tl-3xl"></div>
+          <div class="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-t-[3px] border-r-[3px] border-yellow-500 rounded-tr-3xl"></div>
+          <div class="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 border-b-[3px] border-l-[3px] border-yellow-500 rounded-bl-3xl"></div>
+          <div class="absolute bottom-0 right-0 w-12 h-12 sm:w-16 sm:h-16 border-b-[3px] border-r-[3px] border-yellow-500 rounded-br-3xl"></div>
+          
+          <!-- Black Week dots accent -->
+          <div class="absolute top-1/2 -left-2 sm:-left-3 w-4 h-4 sm:w-6 sm:h-6 bg-yellow-500 rounded-full shadow-lg shadow-yellow-500/50"></div>
+          <div class="absolute top-1/2 -right-2 sm:-right-3 w-4 h-4 sm:w-6 sm:h-6 bg-yellow-500 rounded-full shadow-lg shadow-yellow-500/50"></div>
+
+          <div class="min-w-[250px] max-w-2xl relative shadow-md rounded-md overflow-hidden">
+            {% content_for 'blocks' %}
+            <div class="absolute inset-0 bg-black/15"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex flex-col items-center gap-4">
+        <div class="text-lg text-slate-200 flex items-end">
+          <span class="line-through text-slate-500">59 lei</span>
+          <span class="ml-1 text-2xl font-black bg-gradient-to-r from-yellow-400 to-amber-300 bg-clip-text text-transparent drop-shadow-lg">39 lei</span>
+
+          <!-- Discount banner -->
+          <div class="ml-2 inline-block animate-pulse">
+            <div class="bg-gradient-to-r from-yellow-500 via-yellow-400 to-amber-400 text-black rounded-2xl px-3 py-2 shadow-2xl shadow-yellow-500/50 transform hover:scale-105 transition-all duration-300 border-2 border-yellow-300">
+              <div class="text-sm font-black uppercase tracking-tight">-33%</div>
+            </div>
+          </div>
+        </div>
+
+        {% assign first_product = collections['frontpage'].products.first %}
+        {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Comandă acum - 39 lei', hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-yellow-500 text-black hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-yellow-500/50 font-bold border-2 border-yellow-400 hover:border-yellow-300 hover:scale-105' %}
+
+        <div>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base text-slate-400">
+            <div class="flex items-center gap-2">
+              <span class="app-icon app-icon-delivery !text-[16px]"></span>
+              <span>Livrare rapidă în 24-48h</span>
+            </div>
+            <span class="hidden sm:inline">•</span>
+            <div class="flex items-center gap-2">
+              <span class="app-icon app-icon-shield !text-[16px]"></span>
+              <span>Retur în 30 zile fără întrebări</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const root = document.getElementById('countdown');
+  if (!root) return;
+
+  // ia valorile din primul <div> (cifra) al fiecărui bloc
+  const blocks = Array.from(root.children).map(block => block.querySelector('div'));
+  if (blocks.length < 4) return;
+
+  let days    = parseInt(blocks[0].textContent.trim(), 10) || 0;
+  let hours   = parseInt(blocks[1].textContent.trim(), 10) || 0;
+  let minutes = parseInt(blocks[2].textContent.trim(), 10) || 0;
+  let seconds = parseInt(blocks[3].textContent.trim(), 10) || 0;
+
+  // convertește în secunde totale și pornește timerul
+  const endAt = new Date('2025-11-16 23:59:59');
+  function secondsLeft() {
+    return Math.max(0, Math.floor((endAt.getTime() - Date.now()) / 1000));
+  }
+  let total = secondsLeft();
+  // let total = days * 86400 + hours * 3600 + minutes * 60 + seconds;
+
+  function updateView(remain) {
+    const d = Math.floor(remain / 86400);
+    remain %= 86400;
+    const h = Math.floor(remain / 3600);
+    remain %= 3600;
+    const m = Math.floor(remain / 60);
+    const s = remain % 60;
+
+    // scrie valorile în DOM
+    blocks[0].textContent = d;
+    blocks[1].textContent = String(h).padStart(2, '0');
+    blocks[2].textContent = String(m).padStart(2, '0');
+    blocks[3].textContent = String(s).padStart(2, '0');
+  }
+
+  updateView(total);
+
+  const tick = setInterval(() => {
+    total--;
+    if (total <= 0) {
+      total = 0;
+      updateView(total);
+      clearInterval(tick);
+      // opțional: adaugă o clasă/trigger la final
+      // root.classList.add('opacity-50');
+      return;
+    }
+    updateView(total);
+  }, 1000);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Section hero Black Week",
+  "tag": "section",
+  "class": "section-hero-black-week-wrapper",
+  "blocks": [
+    {
+      "type": "video"
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section hero Black Week",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

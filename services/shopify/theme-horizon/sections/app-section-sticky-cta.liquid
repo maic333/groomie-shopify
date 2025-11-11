@@ -1,8 +1,8 @@
-<div class="sticky-cta fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t shadow-lg transition-transform duration-300 z-50 translate-y-full">
+<div class="sticky-cta fixed bottom-0 left-0 right-0 bg-white/95 bg-black/95 backdrop-blur-sm border-t border-yellow-500 shadow-lg transition-transform duration-300 z-50 translate-y-full">
   <div class="max-w-content mx-auto px-4 py-3">
     <div class="flex flex-col md:flex-row items-center justify-between lg:justify-center gap-4 lg:gap-12">
       <div class="text-center md:text-left">
-        <div class="flex items-center justify-center md:justify-start gap-4 text-sm text-slate-600">
+        <div class="flex items-center justify-center md:justify-start gap-4 text-sm text-slate-600 text-yellow-500">
           <div class="flex items-center gap-1">
             <span class="app-icon app-icon-delivery !text-[16px]"></span>
             <span>Livrare 24-48h</span>
@@ -16,7 +16,12 @@
       </div>
       <div class="flex flex-col gap-1">
         {% assign first_product = collections['frontpage'].products.first %}
+        {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Comandă Mănușa Groomie', hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-yellow-500 text-black hover:bg-yellow-400 transition-all duration-300 shadow-lg shadow-yellow-500/50 font-semibold border-2 border-yellow-400 hover:border-yellow-300' %}
+
+        <!-- #TODO keep only for BLACK WEEK -->
+        <!--
         {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Comandă Mănușa Groomie', hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+         -->
       </div>
     </div>
   </div>
@@ -24,14 +29,14 @@
 
 <script>
   function showStickyCTA(stickyCta, footerPadding) {
-    stickyCta.classList.remove('translate-y-full');
-    stickyCta.classList.add('translate-y-0');
-    footerPadding.classList.remove('hidden');
+    stickyCta?.classList.remove('translate-y-full');
+    stickyCta?.classList.add('translate-y-0');
+    footerPadding?.classList.remove('hidden');
   }
   function hideStickyCTA(stickyCta, footerPadding) {
-    stickyCta.classList.remove('translate-y-0');
-    stickyCta.classList.add('translate-y-full');
-    footerPadding.classList.add('hidden');
+    stickyCta?.classList.remove('translate-y-0');
+    stickyCta?.classList.add('translate-y-full');
+    footerPadding?.classList.add('hidden');
   }
 
   function handleScroll() {

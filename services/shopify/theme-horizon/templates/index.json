@@ -10,7 +10,8 @@
 {
   "sections": {
     "section_hero_1": {
-      "type": "app-section-hero",
+      // "type": "app-section-hero",
+      "type": "app-section-hero_black-week",
       "blocks": {
         "video_xWPQHV": {
           "type": "video",
