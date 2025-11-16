@@ -1,22 +1,17 @@
-<div id="section-leash-led-padlock" class="relative pt-12 sm:pt-20 pb-12 sm:pb-20 bg-background">
+<div id="section-leash-led-classic" class="relative pt-12 sm:pt-20 pb-12 sm:pb-20 bg-background">
   <div class="w-full max-w-content mx-auto px-3 sm:px-6 lg:px-8">
     <div class="text-center space-y-6 sm:space-y-12">
       <!-- Title -->
       <h2 class="text-3xl xs:text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight">
-        <span class="block mb-2">Lesa Groomie Fashion.</span>
-        <span class="block text-groomie-sage">În două nuanțe.</span>
+        <span class="block mb-2">Lesa Groomie Classic.</span>
+        <span class="block text-groomie-sage">Siguranță și confort.</span>
       </h2>
       
-      <!-- Features -->
-      {% comment %} <div class="flex justify-center flex-wrap gap-4">
-        
-      </div> {% endcomment %}
-
       <!-- Products -->
       <div class="w-full grid grid-cols-2 gap-4 sm:gap-8 py-2">
         {% for collection in collections %}
           {% for product in collection.products %}
-            {% if product.id == 9900340085065 %}
+            {% if product.id == 9926163693897 %}
               {% for variant in product.variants %}
                 <div class="relative bg-white rounded-3xl rounded-b-[6px] md:rounded-b-3xl px-1 py-4 xs:px-3 xs:py-4 sm:p-8 shadow-2xl flex flex-col items-center">
                   <a
@@ -25,7 +20,7 @@
                   >
                     <img 
                       src="{{ variant.featured_media.preview_image | image_url }}"
-                      alt="Lesa Groomie Fashion - {{ variant.title }}"
+                      alt="Lesa Groomie Classic - {{ variant.title }}"
                       class="w-full h-full object-cover"
                     />
                   </a>
@@ -40,23 +35,15 @@
                         <span class="text-sm font-black tracking-wider">BLACK NOVEMBER</span>
                       </div>
                       <div class="text-lg">
-                        <span class="line-through text-muted-foreground">199 lei</span>
-                        <span class="ml-2 text-3xl font-bold text-groomie-terracotta">149 lei</span>
-                        <span class="ml-2 text-sm bg-groomie-terracotta text-white px-2 py-1 rounded">-25%</span>
+                        <span class="line-through text-muted-foreground">169 lei</span>
+                        <span class="ml-2 text-3xl font-bold text-groomie-terracotta">119 lei</span>
+                        <span class="ml-2 text-sm bg-groomie-terracotta text-white px-2 py-1 rounded">-30%</span>
                       </div>
                     </div>
 
-                    {% if variant.option1 == 'Roz' %}
-                      <div class="flex justify-center pt-4">
-                        <div class="button relative h-12 w-full sm:w-auto text-md md:text-xl px-2 2xs:px-4 xs:px-8 md:px-12 py-4 sm:py-6 bg-transparent text-red-600 transition-all duration-300 font-semibold cursor-default">
-                          Stoc epuizat
-                        </div>
-                      </div>
-                    {% else %}
-                      <div class="flex justify-center pt-4">
-                        {% render 'app-add-variant-to-cart-button', product: product, variant: variant, add_to_cart_text: 'Adaugă în coș', hide_icon: true, class: 'w-full sm:w-auto text-md md:text-xl px-2 2xs:px-4 xs:px-8 md:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
-                      </div>
-                    {% endif %}
+                    <div class="flex justify-center pt-4">
+                      {% render 'app-add-variant-to-cart-button', product: product, variant: variant, add_to_cart_text: 'Adaugă în coș', hide_icon: true, class: 'w-full sm:w-auto text-md md:text-xl px-2 2xs:px-4 xs:px-8 md:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+                    </div>
                   </div>
                 </div>
               {% endfor %}
@@ -73,7 +60,7 @@
             <span class="font-medium">Lanternă LED</span>
           </div>
           <div class="flex items-center gap-2 bg-gradient-to-br from-groomie-sage/10 to-groomie-sage/20 text-groomie-sage-dark px-3 py-1.5 rounded-full shadow-sm border border-groomie-sage/20">
-            <span class="font-bold">3M</span>
+            <span class="font-bold">5M</span>
             <span class="font-medium">lungime</span>
           </div>
           <div class="flex items-center gap-2 bg-gradient-to-br from-groomie-sage-light/20 to-groomie-sage-light/30 text-groomie-sage-dark px-3 py-1.5 rounded-full shadow-sm border border-groomie-sage-light/30">
@@ -105,13 +92,13 @@
 
 {% schema %}
 {
-  "name": "Section leash led padlock",
+  "name": "Section leash led classic",
   "tag": "section",
-  "class": "section-leash-led-padlock-wrapper",
+  "class": "section-leash-led-classic-wrapper",
   "settings": [],
   "presets": [
     {
-      "name": "Section leash led padlock",
+      "name": "Section leash led classic",
       "category": "Custom Layout",
     }
   ]

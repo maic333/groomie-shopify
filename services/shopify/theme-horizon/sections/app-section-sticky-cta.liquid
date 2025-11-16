@@ -53,7 +53,9 @@
     const heroSectionHeight = heroSection?.offsetHeight;
     const leashLedPadlockSection = document.getElementById('section-leash-led-padlock');
     const leashLedPadlockSectionHeight = leashLedPadlockSection?.offsetHeight;
-    const totalHeight = heroSectionHeight + leashLedPadlockSectionHeight;
+    const groomieCollectionBlackWeekSection = document.getElementById('section-groomie-collection-black-week');
+    const groomieCollectionBlackWeekSectionHeight = groomieCollectionBlackWeekSection?.offsetHeight;
+    const totalHeight = heroSectionHeight + leashLedPadlockSectionHeight + groomieCollectionBlackWeekSectionHeight;
 
     if (scrollPosition > totalHeight - 200) {
       showStickyCTA(stickyCta, footerPadding);
