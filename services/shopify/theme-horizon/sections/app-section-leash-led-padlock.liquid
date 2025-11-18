@@ -46,17 +46,9 @@
                       </div>
                     </div>
 
-                    {% if variant.option1 == 'Roz' %}
-                      <div class="flex justify-center pt-4">
-                        <div class="button relative h-12 w-full sm:w-auto text-md md:text-xl px-2 2xs:px-4 xs:px-8 md:px-12 py-4 sm:py-6 bg-transparent text-red-600 transition-all duration-300 font-semibold cursor-default">
-                          Stoc epuizat
-                        </div>
-                      </div>
-                    {% else %}
-                      <div class="flex justify-center pt-4">
-                        {% render 'app-add-variant-to-cart-button', product: product, variant: variant, add_to_cart_text: 'Adaugă în coș', hide_icon: true, class: 'w-full sm:w-auto text-md md:text-xl px-2 2xs:px-4 xs:px-8 md:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
-                      </div>
-                    {% endif %}
+                    <div class="flex justify-center pt-4">
+                      {% render 'app-add-variant-to-cart-button', product: product, variant: variant, add_to_cart_text: 'Adaugă în coș', hide_icon: true, class: 'w-full sm:w-auto text-md md:text-xl px-2 2xs:px-4 xs:px-8 md:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+                    </div>
                   </div>
                 </div>
               {% endfor %}
