@@ -22,14 +22,14 @@
       
       <!-- CTA -->
       <div class="flex flex-col items-center gap-4">
-        <div class="text-lg text-slate-600">
+        {% comment %} <div class="text-lg text-slate-600">
           <span class="line-through text-slate-400">59 lei</span>
-          <span class="ml-2 text-2xl font-bold text-groomie-terracotta">39 lei</span>
+          <span class="ml-2 text-2xl font-bold text-groomie-terracotta">59 lei</span>
           <span class="ml-2 text-sm bg-groomie-terracotta text-white px-2 py-1 rounded">-33%</span>
-        </div>
+        </div> {% endcomment %}
 
         {% assign first_product = collections['frontpage'].products.first %}
-        {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Comandă acum - 39 lei', hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+        {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Comandă acum - 59 lei', hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
 
         <div>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base text-slate-500">

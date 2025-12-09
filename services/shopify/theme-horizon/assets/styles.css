@@ -1378,10 +1378,6 @@ video {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.cursor-default {
-  cursor: default;
-}
-
 .resize {
   resize: both;
 }
@@ -1675,10 +1671,6 @@ video {
 
 .bg-secondary {
   background-color: hsl(var(--secondary));
-}
-
-.bg-transparent {
-  background-color: transparent;
 }
 
 .bg-white {
@@ -2196,11 +2188,6 @@ video {
 
 .text-primary {
   color: hsl(var(--primary));
-}
-
-.text-red-600 {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
 .text-slate-200 {
