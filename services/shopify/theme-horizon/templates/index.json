@@ -44,11 +44,16 @@
       "name": "Hero",
       "settings": {}
     },
-    "section_leash_led_padlock_1": {
-      "type": "app-section-leash-led-padlock",
-      "name": "Leash led padlock",
+    "section_glove_bundles_1": {
+      "type": "app-section-glove-bundles",
+      "name": "Glove bundles",
       "settings": {}
     },
+    // "section_leash_led_padlock_1": {
+    //   "type": "app-section-leash-led-padlock",
+    //   "name": "Leash led padlock",
+    //   "settings": {}
+    // },
     // "section_leash_led_classic_1": {
     //   "type": "app-section-leash-led-classic",
     //   "name": "Leash led classic",
@@ -202,7 +207,8 @@
   },
   "order": [
     "section_hero_1",
-    "section_leash_led_padlock_1",
+    "section_glove_bundles_1",
+    // "section_leash_led_padlock_1",
     // "section_leash_led_classic_1",
     "section_groomie_collection_black_week_1",
     // "section_features_1",

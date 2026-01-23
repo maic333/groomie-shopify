@@ -3,23 +3,17 @@
   "configurations": [
     {
       "name": "Build",
-      "type": "node",
+      "type": "node-terminal",
       "request": "launch",
       "cwd": "${workspaceFolder}/services/shopify",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "build:watch"],
-      "console": "integratedTerminal",
-      "runtimeVersion": "22.15.0"
+      "command": "zsh -lc \"nvm use && npm run build:watch\""
     },
     {
       "name": "Run",
-      "type": "node",
+      "type": "node-terminal",
       "request": "launch",
       "cwd": "${workspaceFolder}/services/shopify",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "console": "integratedTerminal",
-      "runtimeVersion": "22.15.0"
+      "command": "zsh -lc \"nvm use && npm run dev\""
     }
   ]
 }

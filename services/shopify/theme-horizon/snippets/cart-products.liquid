@@ -95,9 +95,26 @@
 
           <tbody role="rowgroup">
             {% for item in cart.items %}
+              {% liquid
+                assign free_shipping = false
+                if cart.total_price > 8000
+                  assign free_shipping = true
+                endif
+
+                assign glove_qty = 0
+                if item.product_id == 9767750205769
+                  assign glove_qty = item.quantity
+                endif
+
+                assign show_promo_message = false
+                if glove_qty > 0
+                  assign show_promo_message = true
+                endif
+              %}
+
               <tr
                 role="row"
-                class="cart-items__table-row{% if item.parent_relationship.parent != null %} cart-items__nested-line{% endif %}"
+                class="cart-items__table-row{% if item.parent_relationship.parent != null %} cart-items__nested-line{% endif %}{% if show_promo_message %} !border-none !mb-0{% endif %}"
                 ref="cartItemRows[]"
                 data-parent-key="{{ item.parent_relationship.parent.key }}"
                 data-key="{{ item.key }}"
@@ -168,7 +185,8 @@
                     </ul>
                   {%- endif -%}
 
-                  {%- if item.product.has_only_default_variant == false
+                  {%- if item.product.variants.size > 1
+                    and item.product.has_only_default_variant == false
                     or item.properties.size != 0
                     or item.selling_plan_allocation != null
                   -%}
@@ -213,7 +231,7 @@
                       role="list"
                     >
                       {%- for discount in item.line_level_discount_allocations -%}
-                        <li>{{ discount.discount_application.title | escape }}</li>
+                        <li class="text-groomie-sage-dark font-medium">{{ discount.discount_application.title | escape }}</li>
                       {%- endfor -%}
                     </ul>
                   {% endif %}
@@ -221,9 +239,9 @@
                   <div>
                     {% if item.original_price != item.final_price %}
                       <span class="visually-hidden">{{ 'content.price_sale' | t }}</span>
-                      <span>{{ item.final_price | money }}</span>
+                      <span class="text-sm text-groomie-sage-dark font-medium">{{ item.final_price | money }}</span>
                       <span class="visually-hidden">{{ 'content.price_regular' | t }}</span>
-                      <s class="compare-at-price">
+                      <s class="compare-at-price opacity-100">
                         {% if item.variant.compare_at_price > item.original_price %}
                           {{ item.variant.compare_at_price | money }}
                         {% else %}
@@ -319,6 +337,41 @@
                   {%- endif -%}
                 </td>
               </tr>
+
+              <!-- Promotional message -->
+              {% if show_promo_message %}
+                <tr class="cart-items__table-row">
+                  <td class="col-span-4">
+                    {% if glove_qty == 1 %}
+                      <!-- First promo: 1 -> 2 Gloves -->
+                      <div class="text-sm bg-purple-500/10 text-purple-600 p-2 rounded-md border border-purple-500/30">
+                        {% if free_shipping %}
+                          Adaugă încă o mănușă pentru <b>10% reducere</b>.
+                        {% else %}
+                          Adaugă încă o mănușă pentru <b>10% reducere</b> și <b>transport gratuit</b>.
+                        {% endif %}
+                      </div>
+                    {% elsif glove_qty == 2 %}
+                      <!-- Second promo: 2 -> 3 Gloves -->
+                      <div class="text-sm bg-purple-500/10 text-purple-600 p-3 rounded-md border border-purple-500/30 flex flex-col gap-2">
+                        <div class="flex items-center gap-2 font-semibold">
+                          <span>✔️</span>
+                          <span>Ai reducere și transport gratuit</span>
+                        </div>
+                        <div class="text-purple-500/80 italic">
+                          Opțional: pachetul de 3 mănuși are cel mai bun preț
+                        </div>
+                      </div>
+                    {% else %}
+                      <!-- Best offer validation -->
+                      <div class="flex justify-center items-center gap-2 text-sm bg-groomie-sage-dark/10 text-groomie-sage-dark p-2 rounded-md border border-groomie-sage-dark/30">
+                        <span class="app-icon app-icon-check-circle"></span>
+                        <strong>Ai ales cea mai bună ofertă</strong>
+                      </div>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endif %}
             {% endfor %}
           </tbody>
         </table>

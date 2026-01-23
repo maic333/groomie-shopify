@@ -13,12 +13,27 @@
   endfor
 
   assign discount_codes = discount_codes | uniq
+
+  assign free_shipping = false
+  if cart.total_price > 8000
+    assign free_shipping = true
+  endif
+
+  assign glove_qty = 0
+  for item in cart.items
+    if item.product_id == 9767750205769
+      assign glove_qty = item.quantity
+      break
+    endif
+  endfor
 %}
 
-{% if cart.total_price < 8900 %}
+{% if glove_qty > 0 %}
+  {% comment %} Messages added in cart-products.liquid {% endcomment %}
+{% elsif free_shipping != true %}
   <div class="flex flex-col gap-3">
     <div class="text-sm bg-groomie-sage-dark/10 text-groomie-sage-dark p-2 rounded-md border border-groomie-sage-dark/30">
-      <strong>Transport gratuit</strong> la comandă de peste <strong>90 lei</strong>.
+      <strong>Transport gratuit</strong> la comandă de peste <strong>80 lei</strong>.
       <a href="/collections/all" class="text-groomie-sage-dark hover:text-groomie-sage-dark/80 font-bold underline">Vezi toate produsele noastre</a>
     </div>
   </div>
@@ -70,13 +85,20 @@
 
   {%- liquid
     if settings.currency_code_enabled_cart_total
-      assign total_price = cart.total_price | money_with_currency
+      assign total_price = cart.total_price | money
     else
       assign total_price = cart.total_price | money
     endif
   -%}
 
   <div class="cart__total-container">
+    {% if cart.total_price > 8000 %}
+      <div class="flex justify-center items-center gap-2 text-sm bg-groomie-sage-dark/10 text-groomie-sage-dark p-2 rounded-md border border-groomie-sage-dark/30">
+        <span class="app-icon app-icon-check-circle"></span>
+        <strong>Transport gratuit</strong>
+      </div>
+    {% endif %}
+
     <span
       class="cart__summary-item cart__total"
       role="status"
@@ -99,9 +121,12 @@
         {% endform %}
       </span>
     {% endif %}
-    <div class="cart__summary-item tax-note cart-primary-typography">
-      {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
-    </div>
+
+    {% if cart.total_price < 8000 %}
+      <div class="cart__summary-item tax-note cart-primary-typography">
+        {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
+      </div>
+    {% endif %}
   </div>
 </div>
 

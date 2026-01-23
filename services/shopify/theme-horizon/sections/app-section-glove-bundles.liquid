@@ -1,0 +1,136 @@
+<div id="section-glove-bundles" class="relative pt-16 pb-20 bg-background">
+  <div class="w-full max-w-content mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="text-center space-y-6 sm:space-y-12">
+      <!-- Title -->
+      <h2 class="text-3xl xs:text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight">
+        <span class="block mb-2">Pachetele Groomie.</span>
+        <span class="block text-groomie-sage text-2xl xs:text-xl sm:text-2xl lg:text-4xl">Reducere și transport gratuit.</span>
+      </h2>
+      
+      <!-- Subtitle -->
+      <p class="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mx-auto pt-3 pb-6">
+        Elimini părul de animale în câteva secunde — <b>doar să ai mănușa la îndemână</b>.
+      </p>
+      
+      <!-- Bundle Cards -->
+      <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        <!-- Card 1 - 2 Mănuși -->
+        <div class="relative border-2 border-groomie-forest shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white overflow-visible rounded-lg">
+          <!-- Badge on border -->
+          <div class="absolute -top-3 right-4 z-10">
+            <span class="inline-flex items-center gap-1 bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+              <span class="app-icon app-icon-star-filled !text-[12px]"></span>
+              Cea mai populară
+            </span>
+          </div>
+          
+          <div class="h-full flex flex-col gap-0 p-4 pt-5">
+            <!-- Header with title and discount -->
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+                2 MĂNUȘI
+              </h3>
+              <span class="text-xs font-bold text-groomie-forest bg-groomie-forest/10 px-1.5 py-0.5 rounded">-10%</span>
+            </div>
+            
+            <!-- Pricing -->
+            <div class="mb-4">
+              <div class="flex items-center gap-2">
+                <span class="line-through text-muted-foreground text-sm">49 lei</span>
+                <span class="text-xl font-bold text-groomie-forest">44 lei</span>
+                <span class="text-xs text-muted-foreground">/ buc</span>
+              </div>
+            </div>
+            
+            <!-- Subtitle -->
+            <p class="flex-1 font-medium text-base text-groomie-forest/80 mb-4 py-2 italic">Ideal pentru casă și mașină.</p>
+            
+            <!-- CTA -->
+            {% assign first_product = collections['frontpage'].products.first %}
+            <div class="flex justify-center">
+              {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Adaugă în coș — 88 lei', quantity: 2, hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+            </div>
+            
+            <!-- Benefits - inline -->
+            <div class="flex items-center justify-center gap-4 mt-3">
+              <div class="flex items-center gap-1.5">
+                <span class="app-icon app-icon-check-circle !text-[14px] text-green-600 flex-shrink-0"></span>
+                <span class="text-xs text-muted-foreground">Transport gratuit</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="app-icon app-icon-check-circle !text-[14px] text-green-600 flex-shrink-0"></span>
+                <span class="text-xs text-muted-foreground">Preț avantajos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 - 3 Mănuși -->
+        <div class="relative border-2 border-groomie-forest shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white overflow-visible rounded-lg ring-2 ring-groomie-forest/20">
+          <!-- Badge on border -->
+          <div class="absolute -top-3 right-4 z-10">
+            <span class="inline-flex items-center gap-1 bg-groomie-forest text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md">
+              <span class="app-icon app-icon-heart !text-[12px]"></span>
+              Cea mai bună ofertă
+            </span>
+          </div>
+          
+          <div class="h-full flex flex-col gap-0 p-4 pt-5">
+            <!-- Header with title and discount -->
+            <div class="flex items-center gap-2 mb-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+                3 MĂNUȘI
+              </h3>
+              <span class="text-xs font-bold text-white bg-groomie-forest px-1.5 py-0.5 rounded">-30%</span>
+            </div>
+            
+            <!-- Pricing -->
+            <div class="mb-4">
+              <div class="flex items-center gap-2">
+                <span class="line-through text-muted-foreground text-sm">49 lei</span>
+                <span class="text-xl font-bold text-groomie-forest">35 lei</span>
+                <span class="text-xs text-muted-foreground">/ buc</span>
+              </div>
+            </div>
+            
+            <!-- Subtitle -->
+            <p class="flex-1 font-medium text-base text-groomie-forest/80 mb-4 py-2 italic">Cadoul perfect pentru prietenii cu animal de companie.</p>
+
+            <!-- CTA -->
+            <div class="flex justify-center">
+              {% assign first_product = collections['frontpage'].products.first %}
+              {% render 'app-add-to-cart-button', product: first_product, add_to_cart_text: 'Adaugă în coș — 105 lei', quantity: 3, hide_icon: true, class: 'w-full sm:w-auto text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 bg-groomie-sage text-white hover:bg-groomie-sage-dark transition-all duration-300 shadow-lg font-semibold' %}
+            </div>
+            
+            <!-- Benefits - inline -->
+            <div class="flex items-center justify-center gap-4 mt-3">
+              <div class="flex items-center gap-1.5">
+                <span class="app-icon app-icon-check-circle !text-[14px] text-green-600 flex-shrink-0"></span>
+                <span class="text-xs text-muted-foreground">Transport gratuit</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="app-icon app-icon-check-circle !text-[14px] text-green-600 flex-shrink-0"></span>
+                <span class="text-xs text-muted-foreground">Cel mai bun preț</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section glove bundles",
+  "tag": "section",
+  "class": "section-glove-bundles-wrapper",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Section glove bundles",
+      "category": "Custom Layout",
+    }
+  ]
+}
+{% endschema %}

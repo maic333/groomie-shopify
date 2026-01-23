@@ -49,11 +49,13 @@
 
     const heroSection = document.getElementById('section-hero-glove');
     const heroSectionHeight = heroSection?.offsetHeight;
-    const leashLedPadlockSection = document.getElementById('section-leash-led-padlock');
-    const leashLedPadlockSectionHeight = leashLedPadlockSection?.offsetHeight;
+    const gloveBundlesSection = document.getElementById('section-glove-bundles');
+    const gloveBundlesSectionHeight = gloveBundlesSection?.offsetHeight;
+    {% comment %} const leashLedPadlockSection = document.getElementById('section-leash-led-padlock');
+    const leashLedPadlockSectionHeight = leashLedPadlockSection?.offsetHeight; {% endcomment %}
     const groomieCollectionBlackWeekSection = document.getElementById('section-groomie-collection-black-week');
     const groomieCollectionBlackWeekSectionHeight = groomieCollectionBlackWeekSection?.offsetHeight;
-    const totalHeight = heroSectionHeight + leashLedPadlockSectionHeight + groomieCollectionBlackWeekSectionHeight;
+    const totalHeight = heroSectionHeight + gloveBundlesSectionHeight + groomieCollectionBlackWeekSectionHeight;
 
     if (scrollPosition > totalHeight - 200) {
       showStickyCTA(stickyCta, footerPadding);
