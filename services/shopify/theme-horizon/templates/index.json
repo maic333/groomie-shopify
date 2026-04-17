@@ -59,11 +59,11 @@
     //   "name": "Leash led classic",
     //   "settings": {}
     // },
-    "section_groomie_collection_black_week_1": {
-      "type": "app-section-groomie-collection-black-week",
-      "name": "Groomie collection Black Week",
-      "settings": {}
-    },
+    // "section_groomie_collection_black_week_1": {
+    //   "type": "app-section-groomie-collection-black-week",
+    //   "name": "Groomie collection Black Week",
+    //   "settings": {}
+    // },
     // "section_features_1": {
     //   "type": "app-section-features",
     //   "blocks": {
@@ -210,7 +210,7 @@
     "section_glove_bundles_1",
     // "section_leash_led_padlock_1",
     // "section_leash_led_classic_1",
-    "section_groomie_collection_black_week_1",
+    // "section_groomie_collection_black_week_1",
     // "section_features_1",
     "section_hero_2",
     "section_hero_3",

@@ -53,11 +53,11 @@
     const gloveBundlesSectionHeight = gloveBundlesSection?.offsetHeight;
     {% comment %} const leashLedPadlockSection = document.getElementById('section-leash-led-padlock');
     const leashLedPadlockSectionHeight = leashLedPadlockSection?.offsetHeight; {% endcomment %}
-    const groomieCollectionBlackWeekSection = document.getElementById('section-groomie-collection-black-week');
-    const groomieCollectionBlackWeekSectionHeight = groomieCollectionBlackWeekSection?.offsetHeight;
-    const totalHeight = heroSectionHeight + gloveBundlesSectionHeight + groomieCollectionBlackWeekSectionHeight;
+    {% comment %} const groomieCollectionBlackWeekSection = document.getElementById('section-groomie-collection-black-week'); {% endcomment %}
+    {% comment %} const groomieCollectionBlackWeekSectionHeight = groomieCollectionBlackWeekSection?.offsetHeight; {% endcomment %}
+    const totalHeight = heroSectionHeight + gloveBundlesSectionHeight;
 
-    if (scrollPosition > totalHeight - 200) {
+    if (scrollPosition > totalHeight - 400) {
       showStickyCTA(stickyCta, footerPadding);
     } else {
       hideStickyCTA(stickyCta, footerPadding);

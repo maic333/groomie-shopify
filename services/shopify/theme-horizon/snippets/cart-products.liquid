@@ -97,7 +97,7 @@
             {% for item in cart.items %}
               {% liquid
                 assign free_shipping = false
-                if cart.total_price > 8000
+                if cart.total_price > 10000
                   assign free_shipping = true
                 endif
 
@@ -345,21 +345,23 @@
                     {% if glove_qty == 1 %}
                       <!-- First promo: 1 -> 2 Gloves -->
                       <div class="text-sm bg-purple-500/10 text-purple-600 p-2 rounded-md border border-purple-500/30">
-                        {% if free_shipping %}
+                        {% comment %} {% if free_shipping %}
                           Adaugă încă o mănușă pentru <b>10% reducere</b>.
                         {% else %}
                           Adaugă încă o mănușă pentru <b>10% reducere</b> și <b>transport gratuit</b>.
-                        {% endif %}
+                        {% endif %} {% endcomment %}
+
+                        Adaugă încă o mănușă pentru <b>25% reducere</b>.
                       </div>
                     {% elsif glove_qty == 2 %}
                       <!-- Second promo: 2 -> 3 Gloves -->
-                      <div class="text-sm bg-purple-500/10 text-purple-600 p-3 rounded-md border border-purple-500/30 flex flex-col gap-2">
+                      <div class="text-sm bg-purple-500/10 text-purple-600 p-3 rounded-md border border-purple-500/30 flex flex-col gap-3">
                         <div class="flex items-center gap-2 font-semibold">
                           <span>✔️</span>
-                          <span>Ai reducere și transport gratuit</span>
+                          <span>Ai deja 25% reducere</span>
                         </div>
-                        <div class="text-purple-500/80 italic">
-                          Opțional: pachetul de 3 mănuși are cel mai bun preț
+                        <div class="text-purple-500/90 italic">
+                          Opțional: pachetul de 3 mănuși are cel mai bun preț și <span class="font-semibold text-purple-600">transport gratuit</span>
                         </div>
                       </div>
                     {% else %}

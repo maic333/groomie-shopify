@@ -15,7 +15,7 @@
   assign discount_codes = discount_codes | uniq
 
   assign free_shipping = false
-  if cart.total_price > 8000
+  if cart.total_price > 10000
     assign free_shipping = true
   endif
 
@@ -33,7 +33,7 @@
 {% elsif free_shipping != true %}
   <div class="flex flex-col gap-3">
     <div class="text-sm bg-groomie-sage-dark/10 text-groomie-sage-dark p-2 rounded-md border border-groomie-sage-dark/30">
-      <strong>Transport gratuit</strong> la comandă de peste <strong>80 lei</strong>.
+      <strong>Transport gratuit</strong> la comandă de peste <strong>100 lei</strong>.
       <a href="/collections/all" class="text-groomie-sage-dark hover:text-groomie-sage-dark/80 font-bold underline">Vezi toate produsele noastre</a>
     </div>
   </div>
@@ -46,7 +46,8 @@
       <span class="cart__summary-item cart__original-total">
         <span class="cart__original-total-label">{{ 'content.cart_subtotal' | t }}</span>
         <span class="cart__original-total-value cart-secondary-typography">
-          {{- cart.original_total_price | money -}}
+          {{- cart.items_subtotal_price | money -}}
+          {% comment %} {{- cart.original_total_price | money -}} {% endcomment %}
         </span>
       </span>
       <div class="cart__summary-discounts">
@@ -92,7 +93,7 @@
   -%}
 
   <div class="cart__total-container">
-    {% if cart.total_price > 8000 %}
+    {% if cart.total_price > 10000 %}
       <div class="flex justify-center items-center gap-2 text-sm bg-groomie-sage-dark/10 text-groomie-sage-dark p-2 rounded-md border border-groomie-sage-dark/30">
         <span class="app-icon app-icon-check-circle"></span>
         <strong>Transport gratuit</strong>
@@ -122,7 +123,7 @@
       </span>
     {% endif %}
 
-    {% if cart.total_price < 8000 %}
+    {% if cart.total_price < 10000 %}
       <div class="cart__summary-item tax-note cart-primary-typography">
         {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
       </div>
